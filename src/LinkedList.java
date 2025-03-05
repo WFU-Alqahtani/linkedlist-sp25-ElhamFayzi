@@ -27,10 +27,64 @@ public class LinkedList {
         //print
         curr = head;
         while (curr != null) {
-            System.out.println(curr.data);
+            System.out.print(curr.data + " ");
             curr = curr.next;
         }
 
+        java.util.Scanner scnr = new java.util.Scanner(System.in);
+        int num = scnr.nextInt();
+
+        if (head.data == num) {
+            head = head.next;
+        }
+        else {
+            Node prev = head;
+            curr = head.next;
+
+            while (curr != null) {
+                if (curr.data == num) {
+                    prev.next = curr.next;
+                }
+
+                prev = prev.next;
+                curr = curr.next;
+            }
+        }
+
+        curr = head;
+        while (curr != null) {
+            System.out.print(curr.data + " ");
+            curr = curr.next;
+        }
+
+        System.out.println();
+
+        Node tmp = head;
+        head = new Node (20, tmp);
+
+        curr = head;
+        while (curr != null) {
+            if (curr.next == null) {
+                curr.next = new Node (40, null);
+                break;
+            }
+            curr = curr.next;
+        }
+
+        curr = head;
+        for (int i = 0; i < 3; i++) {
+            if (i == 2) {
+                Node temp = curr.next;
+                curr.next = new Node (60, temp);
+            }
+            curr = curr.next;
+        }
+
+        curr = head;
+        while (curr != null) {
+            System.out.print(curr.data + " ");
+            curr = curr.next;
+        }
     }
 
 }
