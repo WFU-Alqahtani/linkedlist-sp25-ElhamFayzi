@@ -31,6 +31,7 @@ public class LinkedList {
             curr = curr.next;
         }
 
+        //Task 1
         java.util.Scanner scnr = new java.util.Scanner(System.in);
         int num = scnr.nextInt();
 
@@ -51,6 +52,7 @@ public class LinkedList {
             }
         }
 
+        //Task 2
         curr = head;
         while (curr != null) {
             System.out.print(curr.data + " ");
@@ -59,9 +61,12 @@ public class LinkedList {
 
         System.out.println();
 
+        //Task 3
+        //Inserting at the beginning of the list
         Node tmp = head;
         head = new Node (20, tmp);
 
+        //Inserting at the end of the list
         curr = head;
         while (curr != null) {
             if (curr.next == null) {
@@ -71,6 +76,7 @@ public class LinkedList {
             curr = curr.next;
         }
 
+        //Inserting as the 4th Node
         curr = head;
         for (int i = 0; i < 3; i++) {
             if (i == 2) {
